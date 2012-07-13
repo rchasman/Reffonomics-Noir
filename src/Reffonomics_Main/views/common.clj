@@ -11,11 +11,12 @@
                  "/css/style.css")
     (include-js "/js/jquery.min.js"
                 "/js/foundation.js"
-                "/js/modernizer.foundation.js")])
+                "/js/modernizr.foundation.js")])
 
 (defpartial top-navbar []
   [:div#navbar
     [:ul#main-nav.nav-bar
+      [:li (link-to "/splash" "Reffonomcs")]
       [:li (link-to "/basic" "Basic Concepts")]
       [:li (link-to "/micro" "Micro Economics")]
       [:li (link-to "/macro" "Macro Economics")]]])
@@ -24,14 +25,18 @@
   (html5
     (global "Welcome")
     [:body
-    (top-navbar)
-      [:div#wrapper content]]))
+      (top-navbar)
+      [:div#wrapper content]]
+      (javascript-tag
+          "$(window).load(function(){
+          $('#featured').orbit({
+                fluid: true })});")))
 
 (defpartial basic [& content]
   (html5
     (global "Basic Concepts")
     [:body
-    (top-navbar)
+      (top-navbar)
       [:div#wrapper content]]))
 
 (defpartial micro [& content]

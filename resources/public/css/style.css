@@ -8,3 +8,9 @@ body
 {
     margin: 0px auto;
 }
+
+#featured
+{
+    margin: 0px auto;
+    text-align: center; 
+}
