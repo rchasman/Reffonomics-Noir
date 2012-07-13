@@ -5,8 +5,7 @@
 (defpartial layout [& content]
             (html5
               [:head
-               [:title "Reffonomics-Main"]
-               (include-css "/css/reset.css")]
+               [:title "Reffonomics-Main"]]
               [:body
                [:div#wrapper
                 content]]))
