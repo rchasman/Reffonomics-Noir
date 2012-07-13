@@ -1,13 +1,49 @@
 (ns Reffonomics-Main.views.common
-  (:use [noir.core :only [defpartial]]
-        [hiccup.page-helpers :only [include-css html5]]))
+  (:use [noir.core]
+        [hiccup.page]
+        [hiccup.element]
+        [hiccup.core]))
 
-(defpartial layout [& content]
-            (html5
-              [:head
-               [:title "Reffonomics-Main"]
-               (include-css "/css/reset.css")
-               (include-css "/css/style.css")]
-              [:body
-               [:div#wrapper
-                content]]))
+(defpartial global [title]
+  [:head
+    [:title (str "Reffonomics - " title)]
+    (include-css "/css/foundation.css"
+                 "/css/style.css")
+    (include-js "/js/jquery.min.js"
+                "/js/foundation.js"
+                "/js/modernizer.foundation.js")])
+
+(defpartial top-navbar []
+  [:div#navbar
+    [:ul#main-nav.nav-bar
+      [:li (link-to "/general" "General Economcs")]
+      [:li (link-to "/micro" "Micro Economics")]
+      [:li (link-to "/macro" "Macro Economics")]]])
+
+(defpartial splash [& content]
+  (html5
+    (global "Welcome")
+    [:body
+    (top-navbar)
+      [:div#wrapper content]]))
+
+(defpartial general [& content]
+  (html5
+    (global "General Economics")
+    [:body
+    (top-navbar)
+      [:div#wrapper content]]))
+
+(defpartial micro [& content]
+  (html5
+    (global "Micro Economics")
+    [:body
+      (top-navbar)
+      [:div#wrapper content]]))
+
+(defpartial macro [& content]
+  (html5
+    (global "Macro Economics")
+    [:body
+      (top-navbar)
+      [:div#wrapper content]]))

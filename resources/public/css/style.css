@@ -1,9 +1,10 @@
 body
 {
-    background: black;
+    background: #FEFEFE;
+    text-align: center;
 }
 
-p
+#main-nav
 {
-    color: green;
+    margin: 0px auto;
 }

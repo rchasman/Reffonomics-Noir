@@ -3,6 +3,21 @@
   (:use [noir.core]
         [hiccup.core]))
 
-(defpage "/hello/:user" {:keys [user]}
-         (template/layout
-           [:p (str "Hello " user "!")]))
+(defpage "/" []
+  (render "/splash"))
+
+(defpage "/splash" []
+  (template/splash
+    [:h1 "Splash"]))
+
+(defpage "/general" []
+  (template/general
+    [:h1 "General Economics"]))
+
+(defpage "/micro" []
+  (template/micro
+    [:h1 "Micro Economics"]))
+
+(defpage "/macro" []
+  (template/macro
+    [:h1 "Macro Economics"]))
