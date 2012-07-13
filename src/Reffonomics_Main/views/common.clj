@@ -16,7 +16,7 @@
 (defpartial top-navbar []
   [:div#navbar
     [:ul#main-nav.nav-bar
-      [:li (link-to "/general" "General Economcs")]
+      [:li (link-to "/basic" "Basic Concepts")]
       [:li (link-to "/micro" "Micro Economics")]
       [:li (link-to "/macro" "Macro Economics")]]])
 
@@ -27,9 +27,9 @@
     (top-navbar)
       [:div#wrapper content]]))
 
-(defpartial general [& content]
+(defpartial basic [& content]
   (html5
-    (global "General Economics")
+    (global "Basic Concepts")
     [:body
     (top-navbar)
       [:div#wrapper content]]))

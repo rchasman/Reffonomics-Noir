@@ -10,9 +10,9 @@
   (template/splash
     [:h1 "Splash"]))
 
-(defpage "/general" []
+(defpage "/basic" []
   (template/general
-    [:h1 "General Economics"]))
+    [:h1 "Basic Concepts"]))
 
 (defpage "/micro" []
   (template/micro
