@@ -1,8 +1,8 @@
-(ns Reffonomics-Main.views.welcome
-  (:require [Reffonomics-Main.views.common :as common])
-  (:use [noir.core :only [defpage]]
-        [hiccup.core :only [html]]))
+(ns Reffonomics-Main.views.pages
+  (:require [Reffonomics-Main.views.common :as template])
+  (:use [noir.core]
+        [hiccup.core]))
 
-(defpage "/" []
-         (common/layout
-           [:p "Welcome to Reffonomics-Main"]))
+(defpage "/hello/:user" {:keys [user]}
+         (template/layout
+           [:p (str "Hello " user "!")]))
