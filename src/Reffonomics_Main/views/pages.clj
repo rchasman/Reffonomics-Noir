@@ -1,5 +1,6 @@
 (ns Reffonomics-Main.views.pages
-  (:require [Reffonomics-Main.views.common :as template])
+  (:require [Reffonomics-Main.views.common :as template]
+            [Reffonomics-Main.views.text :as text])
   (:use [noir.core]
         [hiccup.core]
         [hiccup.element]))
@@ -79,12 +80,38 @@
                   [:a {:href "/about/brown"}
                     (image {:class "about-img"} "/img/brown.jpg")
                     [:h5 "Steven Brown"]]
-                  [:p "This guy has a lot of money."]]]
+                  [:p "Mr. Brown started a foundation."]]]
               [:li.span4
                 [:div.thumbnail
                   [:a {:href "/about/brunell"}
                     (image {:class "about-img"} "/img/brunell.jpg")
                     [:h5 "Dick Brunell"]]
-                  [:p "Dr. Reff hates Dick."]]]
-        ]]]]]
-  ))
+                  [:p "Dick Brunell is a man of the people for the people."]]]]]]]]))
+
+(defpage "/about/reff" []
+  (template/about-reff
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1 "Steven Reff"]
+          [:ul.breadcrumb
+            [:li [:a {:href "/about"} "About"]
+                [:span.divider "/"]]
+            [:li [:a {:href "#"} "Steven Reff"]]]
+          [:p (text/about-reff)]]]]))
+
+(defpage "/about/brunell" []
+  (template/about-brunell
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1 "Dick Brunell"]
+          [:ul.breadcrumb
+            [:li [:a {:href "/about"} "About"]
+                [:span.divider "/"]]
+            [:li [:a {:href "#"} "Dick Brunell"]]]
+          [:div (text/about-brunell)]]]]))

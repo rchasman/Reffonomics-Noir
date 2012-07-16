@@ -15,3 +15,8 @@ body
 {
     margin: 0px auto;
 }
+
+pre
+{
+    text-align: left;
+}
