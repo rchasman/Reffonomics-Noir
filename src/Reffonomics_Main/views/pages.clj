@@ -9,22 +9,45 @@
 
 (defpage "/splash" []
   (template/splash
-    [:br]
     [:h1 "Welcome To Reffonomics"]
-    [:br][:br]
-    [:div#featured
-      (image {:width "500px"} "images/splash1.jpg")
-      (image {:width "500px"} "images/splash2.jpg")
-      (image {:width "500px"} "images/splash3.jpg")]))
+  ))
 
 (defpage "/basic" []
   (template/basic
-    [:h1 "Basic Concepts"]))
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1 "Basic Concepts"]]]]
+  ))
 
 (defpage "/micro" []
   (template/micro
-    [:h1 "Micro Economics"]))
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1 "Micro Economics"]]]]
+  ))
 
 (defpage "/macro" []
   (template/macro
-    [:h1 "Macro Economics"]))
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1 "Macro Economics"]]]]
+  ))
+
+(defpage "/resources" []
+  (template/macro
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1 "Resources"]]]]
+  ))
