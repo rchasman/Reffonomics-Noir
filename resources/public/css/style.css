@@ -2,18 +2,16 @@ body
 {
     background: #FEFEFE;
     text-align: center;
+    line-height: 18px;
 }
 
+.about-img
+{
+    height: 200px;
+    margin: 10px;
+    border-radius: 15px;
+}
 #main-nav
 {
     margin: 0px auto;
 }
-
-#featured
-{
-    margin: 0px auto;
-    text-align: center; 
-    background: url(spinner.gif) center center #f4f4f4; height: 300px; }
-#featured img { display: none; }
-#featured.orbit { background: none; }
-#featured.orbit img { display: block; }

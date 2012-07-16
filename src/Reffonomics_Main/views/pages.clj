@@ -5,11 +5,16 @@
         [hiccup.element]))
 
 (defpage "/" []
-  (render "/splash"))
+  (render "/home"))
 
-(defpage "/splash" []
-  (template/splash
-    [:h1 "Welcome To Reffonomics"]
+(defpage "/home" []
+  (template/home
+    [:div.row-fluid
+      [:div.span12
+        [:div.hero-unit
+          [:h1 "Welcome to Reffonomics.com"]
+          [:h2 "by Steven Reff and Dick Brunell"]
+        ]]]
   ))
 
 (defpage "/basic" []
@@ -50,4 +55,36 @@
       [:div.span9
         [:div.hero-unit
           [:h1 "Resources"]]]]
+  ))
+
+(defpage "/about" []
+  (template/about
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1 "About the Authors"]
+          [:br]
+          [:div.row-fluid
+            [:ul.thumbnails
+              [:li.span4
+                [:div.thumbnail
+                  [:a {:href "/about/reff"}
+                    (image {:class "about-img"} "/img/reff.jpg")
+                    [:h5 "Steven Reff"]]
+                  [:p "Dr. Reff teaches at the Unversity of Arizona."]]]
+              [:li.span4
+                [:div.thumbnail
+                  [:a {:href "/about/brown"}
+                    (image {:class "about-img"} "/img/brown.jpg")
+                    [:h5 "Steven Brown"]]
+                  [:p "This guy has a lot of money."]]]
+              [:li.span4
+                [:div.thumbnail
+                  [:a {:href "/about/brunell"}
+                    (image {:class "about-img"} "/img/brunell.jpg")
+                    [:h5 "Dick Brunell"]]
+                  [:p "Dr. Reff hates Dick."]]]
+        ]]]]]
   ))

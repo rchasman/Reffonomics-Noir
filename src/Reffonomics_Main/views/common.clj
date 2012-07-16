@@ -17,11 +17,19 @@
     [:div.navbar-inner
       [:div.container
         [:ul#main-nav.nav
-          [:a.brand {:href "/splash"} "Reffonomics"]
+          [:a.brand {:href "/home"} "Reffonomics"]
           [:li#nav-1 (link-to "/basic" "Basic Concepts")]
           [:li#nav-2 (link-to "/micro" "Micro Economics")]
           [:li#nav-3 (link-to "/macro" "Macro Economics")]
           [:li#nav-4 (link-to "/resources" "Resources")]
+          [:li#nav-5 (link-to "/about" "About")]]
+        [:ul.nav.pull-right
+          [:form.navbar-search
+            [:input {:type "text" :class "search-query" :placeholder "Search"}]]
+          [:li.divider-vertical]
+          [:li.divider-vertical]
+          [:li "Welcome back:<br>{user}"]
+          [:li.divider-vertical]
         ]]]])
 
 (defpartial side-navbar []
@@ -32,16 +40,17 @@
       [:li#snav-2 (link-to "/micro" "Micro")]
       [:li#snav-3 (link-to "/macro" "Macro")]
       [:li#snav-4 (link-to "/resources" "Resources")]
+      [:li#snav-5 (link-to "/about" "About")]
   ]])
 
-(defpartial splash [& content]
+(defpartial home [& content]
   (html5
-    (global "Welcome")
+    (global "Home")
     [:body
       (top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
-                        $('#nav-1').addClass('active');
+                        $('#snav-0').addClass('active');
                        });")
   ))
 
@@ -89,5 +98,17 @@
       (javascript-tag "$(window).load(function(){
                         $('#nav-4').addClass('active');
                         $('#snav-4').addClass('active');
+                       });")
+  ))
+
+(defpartial about [& content]
+  (html5
+    (global "About")
+    [:body
+      (top-navbar)
+      [:div.container-fluid content]]
+      (javascript-tag "$(window).load(function(){
+                        $('#nav-5').addClass('active');
+                        $('#snav-5').addClass('active');
                        });")
   ))
