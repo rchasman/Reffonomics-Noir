@@ -39,7 +39,7 @@
     (global "Welcome")
     [:body
       (top-navbar)
-      [:div#.container-fluid content]]
+      [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-1').addClass('active');
                        });")
@@ -50,7 +50,7 @@
     (global "Basic Concepts")
     [:body
       (top-navbar)
-      [:div#.container-fluid content]]
+      [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-1').addClass('active');
                         $('#snav-1').addClass('active');
@@ -62,11 +62,10 @@
     (global "Micro Economics")
     [:body
       (top-navbar)
-      [:div#.container-fluid content]]
+      [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-2').addClass('active');
-                        $('#snav-2').addClass('active');
-                       });")
+                        $('#snav-2').addClass('active');});")
   ))
 
 (defpartial macro [& content]
@@ -74,7 +73,7 @@
     (global "Macro Economics")
     [:body
       (top-navbar)
-      [:div#.container-fluid content]]
+      [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-3').addClass('active');
                         $('#snav-3').addClass('active');
@@ -86,7 +85,7 @@
     (global "Resources")
     [:body
       (top-navbar)
-      [:div#.container-fluid content]]
+      [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-4').addClass('active');
                         $('#snav-4').addClass('active');

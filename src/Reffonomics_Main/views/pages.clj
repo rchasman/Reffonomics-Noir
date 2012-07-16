@@ -43,7 +43,7 @@
   ))
 
 (defpage "/resources" []
-  (template/macro
+  (template/resources
     [:div.row-fluid
       [:div.span3
         (template/side-navbar)]
