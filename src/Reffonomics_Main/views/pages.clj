@@ -18,7 +18,7 @@
       (image {:width "500px"} "images/splash3.jpg")]))
 
 (defpage "/basic" []
-  (template/general
+  (template/basic
     [:h1 "Basic Concepts"]))
 
 (defpage "/micro" []
