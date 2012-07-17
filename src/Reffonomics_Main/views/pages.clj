@@ -116,3 +116,12 @@
     [:br]
     [:p (text/about-brunell)]
     [:button.pull-left {:onClick "getAbout('main')"} "Back"]))
+
+(defpage "/tests" []
+  (template/tests
+    [:div.row-fluid
+      [:div.span3
+        (template/side-navbar)]
+      [:div.span9
+        [:div.hero-unit
+          [:h1#tests "Test Center"]]]]))

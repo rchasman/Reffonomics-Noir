@@ -22,7 +22,8 @@
           [:li#nav-2 (link-to "/micro" "Micro Economics")]
           [:li#nav-3 (link-to "/macro" "Macro Economics")]
           [:li#nav-4 (link-to "/resources" "Resources")]
-          [:li#nav-5 (link-to "/about" "About")]]
+          [:li#nav-5 (link-to "/about" "About")]
+          [:li#nav-6 (link-to "/tests" "Tests")]]
         [:ul.nav.pull-right
           [:form.navbar-search
             [:input {:type "text" :class "search-query" :placeholder "Search"}]]
@@ -41,6 +42,7 @@
       [:li#snav-3 (link-to "/macro" "Macro")]
       [:li#snav-4 (link-to "/resources" "Resources")]
       [:li#snav-5 (link-to "/about" "About")]
+      [:li#snav-6 (link-to "/tests" "Tests")]
   ]])
 
 (defpartial home [& content]
@@ -112,4 +114,16 @@
                         $('#snav-5').addClass('active');
                        });")
       (include-js "js/ajax-about.js")
+  ))
+
+(defpartial tests [& content]
+  (html5
+    (global "Tests")
+    [:body
+      (top-navbar)
+      [:div.container-fluid content]]
+      (javascript-tag "$(window).load(function(){
+                        $('#nav-6').addClass('active');
+                        $('#snav-6').addClass('active');
+                       });")
   ))
