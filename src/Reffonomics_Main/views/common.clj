@@ -111,28 +111,5 @@
                         $('#nav-5').addClass('active');
                         $('#snav-5').addClass('active');
                        });")
-  ))
-
-(defpartial about-reff [& content]
-  (html5
-    (global "About - Steven Reff")
-    [:body
-      (top-navbar)
-      [:div.container-fluid content]]
-      (javascript-tag "$(window).load(function(){
-                        $('#nav-5').addClass('active');
-                        $('#snav-5').addClass('active');
-                       });")
-  ))
-
-(defpartial about-brunell [& content]
-  (html5
-    (global "About - Dick Brunell")
-    [:body
-      (top-navbar)
-      [:div.container-fluid content]]
-      (javascript-tag "$(window).load(function(){
-                        $('#nav-5').addClass('active');
-                        $('#snav-5').addClass('active');
-                       });")
+      (include-js "js/ajax-about.js")
   ))

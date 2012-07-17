@@ -3,6 +3,7 @@
             [Reffonomics-Main.views.text :as text])
   (:use [noir.core]
         [hiccup.core]
+        [hiccup.page]
         [hiccup.element]))
 
 (defpage "/" []
@@ -65,53 +66,53 @@
         (template/side-navbar)]
       [:div.span9
         [:div.hero-unit
+          [:div#about]]]]))
+
+(defpage "/about/main" []
+    (html5
           [:h1 "About the Authors"]
           [:br]
           [:div.row-fluid
             [:ul.thumbnails
               [:li.span4
                 [:div.thumbnail
-                  [:a {:href "/about/reff"}
+                  [:a {:onClick "getAbout('reff')"}
                     (image {:class "about-img"} "/img/reff.jpg")
                     [:h5 "Steven Reff"]]
                   [:p "Dr. Reff teaches at the Unversity of Arizona."]]]
               [:li.span4
                 [:div.thumbnail
-                  [:a {:href "/about/brown"}
+                  [:a {:onClick "getAbout('brown')"}
                     (image {:class "about-img"} "/img/brown.jpg")
-                    [:h5 "Steven Brown"]]
+                    [:h5 "Thomas R. Brown"]]
                   [:p "Mr. Brown started a foundation."]]]
               [:li.span4
                 [:div.thumbnail
-                  [:a {:href "/about/brunell"}
+                  [:a {:onClick "getAbout('brunell')"}
                     (image {:class "about-img"} "/img/brunell.jpg")
                     [:h5 "Dick Brunell"]]
-                  [:p "Dick Brunell is a man of the people for the people."]]]]]]]]))
+                  [:p "Dick Brunell is a man of the people for the people."]]]]]))
 
 (defpage "/about/reff" []
-  (template/about-reff
-    [:div.row-fluid
-      [:div.span3
-        (template/side-navbar)]
-      [:div.span9
-        [:div.hero-unit
-          [:h1 "Steven Reff"]
-          [:ul.breadcrumb
-            [:li [:a {:href "/about"} "About"]
-                [:span.divider "/"]]
-            [:li [:a {:href "#"} "Steven Reff"]]]
-          [:p (text/about-reff)]]]]))
+  (html5
+    [:h1 "Steven Reff"]
+    [:button.pull-left {:onClick "getAbout('main')"} "Back"]
+    [:br]
+    [:p (text/about-reff)]
+    [:button.pull-left {:onClick "getAbout('main')"} "Back"]))
 
 (defpage "/about/brunell" []
-  (template/about-brunell
-    [:div.row-fluid
-      [:div.span3
-        (template/side-navbar)]
-      [:div.span9
-        [:div.hero-unit
-          [:h1 "Dick Brunell"]
-          [:ul.breadcrumb
-            [:li [:a {:href "/about"} "About"]
-                [:span.divider "/"]]
-            [:li [:a {:href "#"} "Dick Brunell"]]]
-          [:div (text/about-brunell)]]]]))
+  (html5
+    [:h1 "Dick Brunell"]
+    [:button.pull-left {:onClick "getAbout('main')"} "Back"]
+    [:br]
+    [:p (text/about-brunell)]
+    [:button.pull-left {:onClick "getAbout('main')"} "Back"]))
+
+(defpage "/about/brown" []
+  (html5
+    [:h1 "Thomas R. Brown"]
+    [:button.pull-left {:onClick "getAbout('main')"} "Back"]
+    [:br]
+    [:p (text/about-brunell)]
+    [:button.pull-left {:onClick "getAbout('main')"} "Back"]))
