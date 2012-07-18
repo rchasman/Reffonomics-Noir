@@ -99,13 +99,3 @@
                         $('#snav-6').addClass('active');
                        });")
   ))
-
-(defpartial viewer [& content]
-  (html5
-    (global "Viewer")
-    [:body
-      (nav/top-navbar)
-      [:div.container-fluid content]]
-      (javascript-tag "$(window).load(function(){
-                       });")
-  ))

@@ -20,11 +20,8 @@
         ]]]
   ))
 
-(defpartial flash-link [swf text]
-  [:a {:href (str "/viewer/" swf)}
-    [:button.btn.btn-primary (str text " &nbsp") [:i.icon-film.icon-white]]])
-
 (defpartial flash-modal [swf text]
+  [:br]
   [:a.btn.btn-primary {:data-toggle "modal" :href (str "#" swf "-modal")}
     (str text " &nbsp") [:i.icon-film.icon-white]]
   [:div.modal.hide.fade.in {:id (str swf "-modal")}
@@ -35,7 +32,8 @@
       [:object
         [:param {:name swf :value (str "/res/" swf ".swf")}
           [:embed {:src (str "/res/" swf ".swf") :width "800px" :height "450px"}]]]]]
-  (javascript-tag (str "$('" swf "-modal').modal();")))
+  (javascript-tag (str "$('" swf "-modal').modal();"))
+  [:br])
 
 
 (defpage "/basic" []
@@ -51,32 +49,24 @@
               [:div.accordion-heading
                 [:a.accordion-toggle
                   {:data-toggle "collapse" :href "#1"}
-                    [:h2 "Introduction to Economics Unit"]]
+                    [:h2 "Unit #1 Introduction to Economics Unit"]]
                 [:div#1.accordion-body.collapse.in
                   [:div.accordion-inner
                     [:div.row-fluid
                       [:div.span6
                         [:h4 "1st Edition 2002"]
-                          [:br]
                           (flash-modal "whatiseconomics1" "What is Economics?")
-                          [:br][:br]
                           (flash-modal "opportunitycost" "Opportunity Cost")
-                          [:br][:br]
                           (flash-modal "resources" "Resources")
-                          [:br][:br]
                           (flash-modal "fallacyofcompositionlesson" "Fallacies (Post Hoc and Composition)")
                       ]
                       [:div.span6
                         [:h4 "2nd Edition 2004-2009"]
-                          [:br]
-                          [:a {:href "/viewer/whatiseconomics1"}
-                            [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
-                          [:br][:br]
-                          [:a {:href "/viewer/whatiseconomics1"}
-                            [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
-                          [:br][:br]
-                          [:a {:href "/viewer/whatiseconomics1"}
-                            [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
+                          (flash-modal "fallacyofcompositionlesson" "Scarcity")
+                          (flash-modal "fallacyofcompositionlesson" "Opportunity Cost")
+                          (flash-modal "fallacyofcompositionlesson" "Resources")
+                          (flash-modal "fallacyofcompositionlesson" "Economic Systems")
+                          (flash-modal "fallacyofcompositionlesson" "Terms in Economics")
                       ]]
                     [:div.row-fluid
                       [:br][:br]
@@ -215,12 +205,3 @@
       [:div.span9
         [:div.hero-unit
           [:h1#tests "Test Center"]]]]))
-
-(defpage "/viewer/:swf" {:keys [swf]}
-  (template/viewer
-    [:div.row-fluid
-      [:div.span12
-        [:div.hero-unit
-          [:object
-            [:param {:name swf :value (str "/res/" swf ".swf")}
-              [:embed {:src (str "/res/" swf ".swf") :width "1100px" :height "650px"}]]]]]]))
