@@ -20,6 +20,10 @@
         ]]]
   ))
 
+(defpartial flash-link [filename text]
+  [:a {:href (str "/viewer/" filename)}
+    [:button.btn.btn-primary (str text " &nbsp") [:i.icon-film.icon-white]]])
+
 (defpage "/basic" []
   (template/basic
     [:div.row-fluid
@@ -37,8 +41,36 @@
                 [:div#1.accordion-body.collapse.in
                   [:div.accordion-inner
                     [:div.row-fluid
-                      [:div.span6 "1st Edition 2002"]
-                      [:div.span6 "2nd Edition 2004-2009"]
+                      [:div.span6
+                        [:h4 "1st Edition 2002"]
+                          [:br]
+                          (flash-link "whatiseconomics1" "What is Economics?")
+                          [:br][:br]
+                          [:a {:href "/viewer/oppotunitycost"}
+                            [:button.btn.btn-primary "Opportunity Cost &nbsp"[:i.icon-film.icon-white]]]
+                          [:br][:br]
+                          [:a {:href "/viewer/resources"}
+                            [:button.btn.btn-primary "Resources &nbsp"[:i.icon-film.icon-white]]]
+                          [:br][:br]
+                          [:a {:href "/viewer/fallacyofcompositionlesson"}
+                            [:button.btn.btn-primary "Fallacies (Post Hoc and Composition) &nbsp"[:i.icon-film.icon-white]]]
+                      ]
+                      [:div.span6
+                        [:h4 "2nd Edition 2004-2009"]
+                          [:br]
+                          [:a {:href "/viewer/whatiseconomics1"}
+                            [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
+                          [:br][:br]
+                          [:a {:href "/viewer/whatiseconomics1"}
+                            [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
+                          [:br][:br]
+                          [:a {:href "/viewer/whatiseconomics1"}
+                            [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
+                      ]]
+                    [:div.row-fluid
+                      [:br]
+                      [:a {:href "/viewer/whatiseconomics1"}
+                        [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
 ]]]]]
             [:div.accordion-group
               [:div.accordion-heading
@@ -172,3 +204,12 @@
       [:div.span9
         [:div.hero-unit
           [:h1#tests "Test Center"]]]]))
+
+(defpage "/viewer/:swf" {:keys [swf]}
+  (template/viewer
+    [:div.row-fluid
+      [:div.span12
+        [:div.hero-unit
+          [:object
+            [:param {:name swf :value (str "/res/" swf ".swf")}
+              [:embed {:src (str "/res/" swf ".swf") :width "1100px" :height "650px"}]]]]]]))
