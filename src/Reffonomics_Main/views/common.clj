@@ -14,7 +14,8 @@
                  "/css/style.css")
     (include-js "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
                 "/js/bootstrap.js"
-                "/js/bootstrap-collapse.js")])
+                "/js/bootstrap-collapse.js"
+)])
 
 (defpartial home [& content]
   (html5

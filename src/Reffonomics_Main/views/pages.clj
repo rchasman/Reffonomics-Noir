@@ -20,9 +20,23 @@
         ]]]
   ))
 
-(defpartial flash-link [filename text]
-  [:a {:href (str "/viewer/" filename)}
+(defpartial flash-link [swf text]
+  [:a {:href (str "/viewer/" swf)}
     [:button.btn.btn-primary (str text " &nbsp") [:i.icon-film.icon-white]]])
+
+(defpartial flash-modal [swf text]
+  [:a.btn.btn-primary {:data-toggle "modal" :href (str "#" swf "-modal")}
+    (str text " &nbsp") [:i.icon-film.icon-white]]
+  [:div.modal.hide.fade.in {:id (str swf "-modal")}
+    [:div.modal-header
+      [:a.close {:data-dismiss "modal"} "x"]
+      [:h3 text]]
+    [:div.modal-body
+      [:object
+        [:param {:name swf :value (str "/res/" swf ".swf")}
+          [:embed {:src (str "/res/" swf ".swf") :width "800px" :height "450px"}]]]]]
+  (javascript-tag (str "$('" swf "-modal').modal();")))
+
 
 (defpage "/basic" []
   (template/basic
@@ -44,16 +58,13 @@
                       [:div.span6
                         [:h4 "1st Edition 2002"]
                           [:br]
-                          (flash-link "whatiseconomics1" "What is Economics?")
+                          (flash-modal "whatiseconomics1" "What is Economics?")
                           [:br][:br]
-                          [:a {:href "/viewer/oppotunitycost"}
-                            [:button.btn.btn-primary "Opportunity Cost &nbsp"[:i.icon-film.icon-white]]]
+                          (flash-modal "opportunitycost" "Opportunity Cost")
                           [:br][:br]
-                          [:a {:href "/viewer/resources"}
-                            [:button.btn.btn-primary "Resources &nbsp"[:i.icon-film.icon-white]]]
+                          (flash-modal "resources" "Resources")
                           [:br][:br]
-                          [:a {:href "/viewer/fallacyofcompositionlesson"}
-                            [:button.btn.btn-primary "Fallacies (Post Hoc and Composition) &nbsp"[:i.icon-film.icon-white]]]
+                          (flash-modal "fallacyofcompositionlesson" "Fallacies (Post Hoc and Composition)")
                       ]
                       [:div.span6
                         [:h4 "2nd Edition 2004-2009"]
@@ -68,7 +79,7 @@
                             [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
                       ]]
                     [:div.row-fluid
-                      [:br]
+                      [:br][:br]
                       [:a {:href "/viewer/whatiseconomics1"}
                         [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
 ]]]]]
