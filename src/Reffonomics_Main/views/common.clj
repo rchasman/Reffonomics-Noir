@@ -2,7 +2,8 @@
   (:use [noir.core]
         [hiccup.page]
         [hiccup.element]
-        [hiccup.core]))
+        [hiccup.core])
+  (:require [noir.response :as resp]))
 
 (defpartial global [title]
   [:head

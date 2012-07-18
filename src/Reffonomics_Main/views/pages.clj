@@ -76,46 +76,49 @@
             [:ul.thumbnails
               [:li.span4
                 [:div.thumbnail
-                  [:a {:onClick "getAbout('reff')"}
+                  [:a {:href "#Reff" :onClick "getAbout('reff')"}
                     (image {:class "about-img"} "/img/reff.jpg")
                     [:h5 "Steven Reff"]]
                   [:p "Dr. Reff teaches at the Unversity of Arizona."]]]
               [:li.span4
                 [:div.thumbnail
-                  [:a {:onClick "getAbout('brown')"}
+                  [:a {:href "#Brown" :onClick "getAbout('brown')"}
                     (image {:class "about-img"} "/img/brown.jpg")
                     [:h5 "Thomas R. Brown"]]
                   [:p "Mr. Brown started a foundation."]]]
               [:li.span4
                 [:div.thumbnail
-                  [:a {:onClick "getAbout('brunell')"}
+                  [:a {:href "#Brunell" :onClick "getAbout('brunell')"}
                     (image {:class "about-img"} "/img/brunell.jpg")
                     [:h5 "Dick Brunell"]]
                   [:p "Dick Brunell is a man of the people for the people."]]]]]))
+(defpartial about-back-button []
+    [:a {:href "#"}
+      [:button.pull-left {:onClick "getAbout('main')"} "Back"]])
 
 (defpage "/about/reff" []
   (html5
     [:h1 "Steven Reff"]
-    [:button.pull-left {:onClick "getAbout('main')"} "Back"]
+    (about-back-button)
     [:br]
     [:p (text/about-reff)]
-    [:button.pull-left {:onClick "getAbout('main')"} "Back"]))
+    (about-back-button)))
 
 (defpage "/about/brunell" []
   (html5
     [:h1 "Dick Brunell"]
-    [:button.pull-left {:onClick "getAbout('main')"} "Back"]
+    (about-back-button)
     [:br]
     [:p (text/about-brunell)]
-    [:button.pull-left {:onClick "getAbout('main')"} "Back"]))
+    (about-back-button)))
 
 (defpage "/about/brown" []
   (html5
     [:h1 "Thomas R. Brown"]
-    [:button.pull-left {:onClick "getAbout('main')"} "Back"]
+    (about-back-button)
     [:br]
     [:p (text/about-brunell)]
-    [:button.pull-left {:onClick "getAbout('main')"} "Back"]))
+    (about-back-button)))
 
 (defpage "/tests" []
   (template/tests
