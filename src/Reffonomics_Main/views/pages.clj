@@ -136,7 +136,94 @@
         (nav/side-navbar)]
       [:div.span9
         [:div.hero-unit
-          [:h1 "Micro Economics"]]]]
+          [:h1 "Micro Economics"]
+          [:br]
+          [:div.tabbable.tabs-left
+            [:ul.nav.nav-tabs
+              [:li.active
+                [:a {:href "#tab1" :data-toggle "tab"} "Elasticity"]]
+              [:li
+                [:a {:href "#tab2" :data-toggle "tab"} "Marginal Analysis"]]
+              [:li
+                [:a {:href "#tab3" :data-toggle "tab"} "Utility"]]
+              [:li
+                [:a {:href "#tab4" :data-toggle "tab"} "Costs of Production"]]
+              [:li
+                [:a {:href "#tab5" :data-toggle "tab"} "Perfect Competition"]]
+              [:li
+                [:a {:href "#tab6" :data-toggle "tab"} "Monopoly"]]
+              [:li
+                [:a {:href "#tab7" :data-toggle "tab"} "Other Forms of Competition"]]
+              [:li
+                [:a {:href "#tab8" :data-toggle "tab"} "Competition Games"]]
+              [:li
+                [:a {:href "#tab9" :data-toggle "tab"} "Labor Market"]]
+              [:li
+                [:a {:href "#tab10" :data-toggle "tab"} "Economic Rent"]]
+              [:li
+                [:a {:href "#tab11" :data-toggle "tab"} "Externalities, Private vs. Public Goods"]]
+              [:li
+                [:a {:href "#tab12" :data-toggle "tab"} "Income Distribution"]]
+              [:li
+                [:a {:href "#tab13" :data-toggle "tab"} "Tariff Graph"]]
+              [:li
+                [:a {:href "#tab14" :data-toggle "tab"} "Investments"]]
+              [:li
+                [:a {:href "#tab15" :data-toggle "tab"} "Miscellanious"]]]
+            [:div.tab-content
+              [:div#tab1.tab-pane.active
+                [:div.row-fluid
+                  [:div.span6
+                    [:h3 "2nd Edition 2006 - 2011"
+                      [:br]
+                      (flash-modal "null" "Elasticity of Demand, Part I")
+                      (flash-modal "null" "Elasticity of Demand, Part II")
+                      (flash-modal "null" "Elasticity of Demand, Part III")
+                      (flash-modal "null" "Elasticity of Demand, Part IV")
+                      (flash-modal "null" "Elasticity of Demand, Part V")
+                      (pdf-questions "null" "Multiple Choice Questions")
+                      (interactive-modal "null" "Per-Unit Tax Interactive, Part I")
+                      (interactive-modal "null" "Per-Unit Tax Interactive, Part II")
+                      (pdf-questions "null" "'Free' Repsonse Question 1")
+                      (pdf-questions "null" "'Free' Repsonse Question 2")
+                      (interactive-modal "null" "Royal Order of TANSTAAFL Induction")
+                    ]]
+                  [:div.span6
+                    [:h3 "1st Edition 2002"
+                      [:br][:br]
+                      (flash-modal "null" "Elasticity")
+                      [:br]
+                      (flash-modal "null" "Elasticity and Excise Tax")
+                    ]]]]
+              [:div#tab2.tab-pane
+                [:h3 "content2"]]
+              [:div#tab3.tab-pane
+                [:h3 "content3"]]
+              [:div#tab4.tab-pane
+                [:h3 "content4"]]
+              [:div#tab5.tab-pane
+                [:h3 "content5"]]
+              [:div#tab6.tab-pane
+                [:h3 "content6"]]
+              [:div#tab7.tab-pane
+                [:h3 "content7"]]
+              [:div#tab8.tab-pane
+                [:h3 "content8"]]
+              [:div#tab9.tab-pane
+                [:h3 "content9"]]
+              [:div#tab10.tab-pane
+                [:h3 "content10"]]
+              [:div#tab11.tab-pane
+                [:h3 "content11"]]
+              [:div#tab12.tab-pane
+                [:h3 "content12"]]
+              [:div#tab13.tab-pane
+                [:h3 "content13"]]
+              [:div#tab14.tab-pane
+                [:h3 "content14"]]
+              [:div#tab15.tab-pane
+                [:h3 "content15"]]]
+]]]]
   ))
 
 (defpage "/macro" []
