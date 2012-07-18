@@ -23,7 +23,7 @@
 
 (defpartial top-navbar []
   (javascript-tag "$(document).ready(function(){
-                    $('.collapse').collapse();});")
+                    $('.collapse').collapse({toggle:false});});")
   [:div.navbar
     [:div.navbar-inner
       [:div.container

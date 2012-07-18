@@ -28,46 +28,46 @@
       [:div.span9
         [:div.hero-unit
           [:h1 "Basic Concepts"]
-          [:div#categories.accordian
-            [:div.accordian-group
-              [:div.accordian-heading
-                [:a.accordian-toggle
-                  {:data-toggle "collapse" :data-parent "categories" :href "#1"}
+          [:div.accordion
+            [:div.accordion-group
+              [:div.accordion-heading
+                [:a.accordion-toggle
+                  {:data-toggle "collapse" :href "#1"}
                     [:h2 "Introduction to Economics Unit"]]
-                [:div#1.accordian-body.collapse
-                  [:div.accordian-inner
+                [:div#1.accordion-body.collapse.in
+                  [:div.accordion-inner
                     [:div.row-fluid
                       [:div.span6 "1st Edition 2002"]
                       [:div.span6 "2nd Edition 2004-2009"]
 ]]]]]
-            [:div.accordian-group
-              [:div.accordian-heading
-                [:a.accordian-toggle
-                  {:data-toggle "collapse" :data-parent "categories" :href "#2"}
+            [:div.accordion-group
+              [:div.accordion-heading
+                [:a.accordion-toggle
+                  {:data-toggle "collapse" :href "#2"}
                     [:h2 "Production-Possibilities Curve/Frontier Unit"]]
-                [:div#2.accordian-body.in.collapse
-                  [:div.accordian-inner "TEST" ]]]]
-            [:div.accordian-group
-              [:div.accordian-heading
-                [:a.accordian-toggle
-                  {:data-toggle "collapse" :data-parent "categories" :href "#3"}
+                [:div#2.accordion-body.collapse
+                  [:div.accordion-inner "TEST" ]]]]
+            [:div.accordion-group
+              [:div.accordion-heading
+                [:a.accordion-toggle
+                  {:data-toggle "collapse" :href "#3"}
                     [:h2 "Circular Flow Unit"]]
-                [:div#3.accordian-body.in.collapse
-                  [:div.accordian-inner "TEST" ]]]]
-            [:div.accordian-group
-              [:div.accordian-heading
-                [:a.accordian-toggle
-                  {:data-toggle "collapse" :data-parent "categories" :href "#4"}
+                [:div#3.accordion-body.collapse
+                  [:div.accordion-inner "TEST" ]]]]
+            [:div.accordion-group
+              [:div.accordion-heading
+                [:a.accordion-toggle
+                  {:data-toggle "collapse" :href "#4"}
                      [:h2 "Supply and Demand Unit"]]
-                [:div#4.accordian-body.in.collapse
-                  [:div.accordian-inner "TEST" ]]]]
-            [:div.accordian-group
-              [:div.accordian-heading
-                [:a.accordian-toggle
-                  {:data-toggle "collapse" :data-parent "categories" :href "#5"}
+                [:div#4.accordion-body.collapse
+                  [:div.accordion-inner "TEST" ]]]]
+            [:div.accordion-group
+              [:div.accordion-heading
+                [:a.accordion-toggle
+                  {:data-toggle "collapse" :href "#5"}
                      [:h2 "Price Ceiling and Price Floor"]]
-                [:div#5.accordian-body.in.collapse
-                  [:div.accordian-inner "TEST" ]]]]
+                [:div#5.accordion-body.collapse
+                  [:div.accordion-inner "TEST" ]]]]
 
 ]]]]
   ))
