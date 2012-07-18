@@ -1,6 +1,4 @@
 (ns Reffonomics-Main.views.nav
-  (:require [Reffonomics-Main.views.common :as template]
-            [Reffonomics-Main.views.text :as text])
   (:use [noir.core]
         [hiccup.core]
         [hiccup.page]
@@ -8,7 +6,7 @@
 
 (defpartial top-navbar-collapse []
   [:div.nav-collapse
-    [:ul#main-nav.nav
+    [:ul.nav.pull-left
       [:li#nav-1 (link-to "/basic" "Basic Concepts")]
       [:li#nav-2 (link-to "/micro" "Micro Economics")]
       [:li#nav-3 (link-to "/macro" "Macro Economics")]

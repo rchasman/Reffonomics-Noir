@@ -2,9 +2,9 @@
   (:use [noir.core]
         [hiccup.page]
         [hiccup.element]
-        [hiccup.core]
-        [Reffonomics-Main.views.nav])
-  (:require [noir.response :as resp]))
+        [hiccup.core])
+  (:require [noir.response :as resp]
+            [Reffonomics-Main.views.nav :as nav]))
 
 (defpartial global [title]
   [:head
@@ -12,7 +12,7 @@
     (include-css "/css/bootstrap.css"
                  "/css/responsive.css"
                  "/css/style.css")
-    (include-js "/js/jquery.min.js"
+    (include-js "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
                 "/js/bootstrap.js"
                 "/js/bootstrap-collapse.js")])
 
@@ -20,7 +20,7 @@
   (html5
     (global "Home")
     [:body
-      (top-navbar)
+      (nav/top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#snav-0').addClass('active');
@@ -31,7 +31,7 @@
   (html5
     (global "Basic Concepts")
     [:body
-      (top-navbar)
+      (nav/top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-1').addClass('active');
@@ -43,7 +43,7 @@
   (html5
     (global "Micro Economics")
     [:body
-      (top-navbar)
+      (nav/top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-2').addClass('active');
@@ -54,7 +54,7 @@
   (html5
     (global "Macro Economics")
     [:body
-      (top-navbar)
+      (nav/top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-3').addClass('active');
@@ -66,7 +66,7 @@
   (html5
     (global "Resources")
     [:body
-      (top-navbar)
+      (nav/top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-4').addClass('active');
@@ -78,7 +78,7 @@
   (html5
     (global "About")
     [:body
-      (top-navbar)
+      (nav/top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-5').addClass('active');
@@ -91,7 +91,7 @@
   (html5
     (global "Tests")
     [:body
-      (top-navbar)
+      (nav/top-navbar)
       [:div.container-fluid content]]
       (javascript-tag "$(window).load(function(){
                         $('#nav-6').addClass('active');
