@@ -12,7 +12,7 @@
     (include-css "/css/bootstrap.css"
                  "/css/responsive.css"
                  "/css/style.css")
-    (include-js "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    (include-js "/js/jquery.min.js"
                 "/js/bootstrap.js"
                 "/js/bootstrap-collapse.js"
 )])

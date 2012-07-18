@@ -15,15 +15,19 @@
     [:div.row-fluid
       [:div.span12
         [:div.hero-unit
-          [:h1 "Welcome to Reffonomics.com"]
-          [:h2 "by Steven Reff and Dick Brunell"]
+          (image {:alt "Reffonomics.com"} "/img/logo.jpg")
+          [:h1 "Welcome to Reffonomics"]
+          [:br]
+          [:h2 "by Steven Reff and Dick Brunelle"]
+          [:br][:br]
+          (link-to "/basic" [:button.btn.btn-primary.btn-large "Let's Get Started!"])
         ]]]
   ))
 
 (defpartial flash-modal [swf text]
   [:br]
   [:a.btn.btn-primary {:data-toggle "modal" :href (str "#" swf "-modal")}
-    (str text " &nbsp") [:i.icon-film.icon-white]]
+    (str text " &nbsp") [:i.icon-film]]
   [:div.modal.hide.fade.in {:id (str swf "-modal")}
     [:div.modal-header
       [:a.close {:data-dismiss "modal"} "x"]
@@ -35,6 +39,26 @@
   (javascript-tag (str "$('" swf "-modal').modal();"))
   [:br])
 
+(defpartial interactive-modal [swf text]
+  [:br]
+  [:a.btn.btn-info {:data-toggle "modal" :href (str "#" swf "-modal")}
+    (str text " &nbsp") [:i.icon-wrench.icon-white]]
+  [:div.modal.hide.fade.in {:id (str swf "-modal")}
+    [:div.modal-header
+      [:a.close {:data-dismiss "modal"} "x"]
+      [:h3 text]]
+    [:div.modal-body
+      [:object
+        [:param {:name swf :value (str "/res/" swf ".swf")}
+          [:embed {:src (str "/res/" swf ".swf") :width "800px" :height "450px"}]]]]]
+  (javascript-tag (str "$('" swf "-modal').modal();"))
+  [:br])
+
+(defpartial pdf-questions [pdf text]
+  [:br]
+  [:a.btn.btn-danger {:href (str "/res/pdf/" pdf ".pdf")}
+    (str text " &nbsp") [:i.icon-book]]
+  [:br])
 
 (defpage "/basic" []
   (template/basic
@@ -44,14 +68,16 @@
       [:div.span9
         [:div.hero-unit
           [:h1 "Basic Concepts"]
+          [:br]
           [:div.accordion
             [:div.accordion-group
               [:div.accordion-heading
                 [:a.accordion-toggle
                   {:data-toggle "collapse" :href "#1"}
-                    [:h2 "Unit #1 Introduction to Economics Unit"]]
+                    [:h2 "Unit #1 Introduction to Economics"]]
                 [:div#1.accordion-body.collapse.in
                   [:div.accordion-inner
+                    [:br]
                     [:div.row-fluid
                       [:div.span6
                         [:h4 "1st Edition 2002"]
@@ -59,48 +85,46 @@
                           (flash-modal "opportunitycost" "Opportunity Cost")
                           (flash-modal "resources" "Resources")
                           (flash-modal "fallacyofcompositionlesson" "Fallacies (Post Hoc and Composition)")
+                          (interactive-modal "posthocfallacyofcomposition" "Post Hoc Fallacy and Fallacy of Composition")
+                          (pdf-questions "FallacyWorksheet" "'Free' Response Questions")
+                          (pdf-questions "FallacyFRQrubric" "'Free' Response Questions Rubric")
                       ]
                       [:div.span6
                         [:h4 "2nd Edition 2004-2009"]
-                          (flash-modal "fallacyofcompositionlesson" "Scarcity")
-                          (flash-modal "fallacyofcompositionlesson" "Opportunity Cost")
-                          (flash-modal "fallacyofcompositionlesson" "Resources")
-                          (flash-modal "fallacyofcompositionlesson" "Economic Systems")
-                          (flash-modal "fallacyofcompositionlesson" "Terms in Economics")
-                      ]]
-                    [:div.row-fluid
-                      [:br][:br]
-                      [:a {:href "/viewer/whatiseconomics1"}
-                        [:button.btn.btn-primary "What is Economics? &nbsp"[:i.icon-film.icon-white]]]
-]]]]]
+                          (flash-modal "Scarcity22" "Scarcity")
+                          (flash-modal "Opportunitycost22" "Opportunity Cost")
+                          (flash-modal "Resources22" "Resources")
+                          (flash-modal "economicsystemsbook2" "Economic Systems")
+                          (flash-modal "terms" "Terms in Economics")]]
+                      [:br]]]]]
             [:div.accordion-group
               [:div.accordion-heading
                 [:a.accordion-toggle
                   {:data-toggle "collapse" :href "#2"}
                     [:h2 "Production-Possibilities Curve/Frontier Unit"]]
                 [:div#2.accordion-body.collapse
-                  [:div.accordion-inner "TEST" ]]]]
+                  [:div.accordion-inner "&ltcontent&gt" ]]]]
             [:div.accordion-group
               [:div.accordion-heading
                 [:a.accordion-toggle
                   {:data-toggle "collapse" :href "#3"}
                     [:h2 "Circular Flow Unit"]]
                 [:div#3.accordion-body.collapse
-                  [:div.accordion-inner "TEST" ]]]]
+                  [:div.accordion-inner "&ltcontent&gt" ]]]]
             [:div.accordion-group
               [:div.accordion-heading
                 [:a.accordion-toggle
                   {:data-toggle "collapse" :href "#4"}
                      [:h2 "Supply and Demand Unit"]]
                 [:div#4.accordion-body.collapse
-                  [:div.accordion-inner "TEST" ]]]]
+                  [:div.accordion-inner "&ltcontent&gt" ]]]]
             [:div.accordion-group
               [:div.accordion-heading
                 [:a.accordion-toggle
                   {:data-toggle "collapse" :href "#5"}
                      [:h2 "Price Ceiling and Price Floor"]]
                 [:div#5.accordion-body.collapse
-                  [:div.accordion-inner "TEST" ]]]]
+                  [:div.accordion-inner "&ltcontent&gt" ]]]]
 
 ]]]]
   ))
@@ -164,10 +188,10 @@
             [:p "Mr. Brown started a foundation."]]]
         [:li.span4
           [:div.thumbnail
-            [:a {:href "#Brunell" :onClick "getAbout('brunell')"}
-              (image {:class "about-img"} "/img/brunell.jpg")
-              [:h5 "Dick Brunell"]]
-            [:p "Dick Brunell is a man of the people for the people."]]]]]))
+            [:a {:href "#Brunell" :onClick "getAbout('brunelle')"}
+              (image {:class "about-img"} "/img/brunelle.jpg")
+              [:h5 "Dick Brunelle"]]
+            [:p "Dick Brunelle is a man of the people for the people."]]]]]))
 
 (defpartial about-back-button []
     [:a {:href "#"}
@@ -183,10 +207,10 @@
 
 (defpage "/about/brunell" []
   (html5
-    [:h1 "Dick Brunell"]
+    [:h1 "Dick Brunelle"]
     (about-back-button)
     [:br]
-    [:p (text/about-brunell)]
+    [:p (text/about-brunelle)]
     (about-back-button)))
 
 (defpage "/about/brown" []

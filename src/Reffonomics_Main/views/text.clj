@@ -95,7 +95,7 @@ Outside his regular teaching duties, Steve has been the school's golf coach for 
 
 Most recently, during the summer of 2004, Steven directed his 4th annual AP Economics Technology Institute in Tucson, Arizona. In July, he was the keynote speaker at a conference at the Federal Reserve in Richmond, Virginia and at the Board of Governors in Washington, D.C. He is in his second year of teaching an online AP Economics course for teachers through UCLA Online. At the end of July, he was a consultant for the Desert Institute to teach teachers how to teach AP Economics. In Septemeber he was honored at the National Council on Economic Education's Annual Conference in Little Rock, Arkansas as one of the semi-finalists for the NASDAQ Teacher of the Year Awards."])
 
-(defpartial about-brunell []
+(defpartial about-brunelle []
   [:pre "
 Dick Brunelle, Economics Educator
 Current interest: Program Director, Economic Education Foundation

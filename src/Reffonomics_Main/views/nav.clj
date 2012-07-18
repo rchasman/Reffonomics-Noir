@@ -43,6 +43,21 @@
       [:li#snav-3 (link-to "/macro" "Macro Economics")]
       [:li#snav-4 (link-to "/resources" "Resources")]
       [:li#snav-5 (link-to "/about" "About")]
-      [:li#snav-6 (link-to "/tests" "Tests")]
-  ]])
+      [:li#snav-6 (link-to "/tests" "Tests")]]]
+  [:div.well
+    [:button.btn.btn-primary
+      [:i.icon-film]
+      " :&nbsp Orange Buttons Indicate Non-interactive Flash Lessons. &nbsp"]
+    [:br][:br]
+    [:button.btn.btn-info
+      [:i.icon-wrench.icon-white]
+      " :&nbsp Purple Buttons Indicate Interactive Flash Lessons. &nbsp"]
+    [:br][:br]
+    [:button.btn.btn-danger
+      [:i.icon-book]
+      " :&nbsp Red Buttons Indicate Practice Test Questions. &nbsp"]
+    [:br][:br]
+    [:button.btn.btn-inverse
+      [:i.icon-pencil.icon-white]
+      " :&nbsp Black Buttons Indicate Unit Practice Tests &nbsp"]])
 
