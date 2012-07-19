@@ -230,10 +230,14 @@
   (template/macro
     [:div.row-fluid
       [:div.span3
-        (nav/side-navbar)]
+        (nav/side-macro-navbar)]
       [:div.span9
         [:div.hero-unit
-          [:h1 "Macro Economics"]]]]
+          [:h1 "Macro Economics"]
+          [:div.well
+            [:div#inner 
+              [:h2 "Intro to Macro Economics"]
+              [:p "&ltcontent&gt"]]]]]]
   ))
 
 (defpage "/resources" []
@@ -305,7 +309,7 @@
     [:h1 "Thomas R. Brown"]
     (about-back-button)
     [:br]
-    [:p (text/about-brunell)]
+    [:p (text/about-brunelle)]
     (about-back-button)))
 
 (defpage "/tests" []
