@@ -3498,9 +3498,7 @@ input[type="submit"].btn.btn-mini {
   top: 50%;
   left: 50%;
   z-index: 1050;
-  overflow: auto;
-  width: 850px;
-  height: 550px;
+  width: 800px;
   margin: -350px 0 0 -280px;
   background-color: #ffffff;
   border: 1px solid #999;
@@ -3531,13 +3529,16 @@ input[type="submit"].btn.btn-mini {
 .modal-header {
   padding: 9px 15px;
   border-bottom: 1px solid #eee;
+  display:none;
 }
 .modal-header .close {
   margin-top: 2px;
 }
 .modal-body {
-  overflow-y: none;
-  padding: 15px;
+  max-height: 500px;
+  position: fixed;
+  top: 10%;
+  right: 23%;
 }
 .modal-form {
   margin-bottom: 0;
